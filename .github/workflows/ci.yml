@@ -40,10 +40,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-  publish:
-    needs: deploy
+
       
-      - name: build and push docker image
+      - name: docker build
         uses: cloudposse/github-action-docker-build-push@main
         with:
           image: jasek777/websvrtesting
