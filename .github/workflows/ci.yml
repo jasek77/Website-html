@@ -42,6 +42,14 @@ jobs:
         uses: actions/deploy-pages@v1
   publish:
     needs: deploy
+      
+      - name: build and push docker image
+        uses: cloudposse/github-action-docker-build-push@main
+        with:
+          image: jasek777/websvrtesting
+          registry: docker.io
+          login: "${{ secrets.DOCKERHUB_USERNAME }}"
+          password: "${{ secrets.DOCKERHUB_PASSWORD }}"
           
 
  
